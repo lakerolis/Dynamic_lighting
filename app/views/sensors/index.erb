@@ -1,0 +1,9 @@
+<div class ="sensors">
+  <h1>Sensors</h1>
+<% @sensors.each do |sensor| %>
+  <h2><%=sensor.name%></h2>
+      <p><%=sensor.description%></p><br>
+      <%= link_to 'Delete', 'sensors/delete/'+sensor.id.to_s, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+</div>
+<%= link_to 'New sensor', 'sensors/new'%>
