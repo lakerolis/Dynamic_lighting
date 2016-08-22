@@ -1,3 +1,17 @@
 // Place all the styles related to the sensors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sensorTable {
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+}
+
+.sensorTable td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+.sensorTable tr:nth-child(even) {
+  background-color: #dddddd;
+}

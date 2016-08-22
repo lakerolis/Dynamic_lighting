@@ -1,9 +1,18 @@
 <div class ="sensors">
   <h1>Sensors</h1>
-<% @sensors.each do |sensor| %>
-  <h2><%=sensor.name%></h2>
-      <p><%=sensor.description%></p><br>
-      <%= link_to 'Delete', 'sensors/delete/'+sensor.id.to_s, data: { confirm: 'Are you sure?' } %>
-      <%end%>
+  <table class="sensorTable">
+    <tr>
+      <th>Same</th>
+      <th>description</th>
+      <th></th>
+    </tr>
+    <% @sensors.each do |sensor| %>
+        <tr>
+          <td><%=sensor.name%></td>
+          <td><%=sensor.description%></td>
+          <td> <%= link_to 'Delete', 'sensors/delete/'+sensor.id.to_s, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+    </tr>
+  </table>
 </div>
 <%= link_to 'New sensor', 'sensors/new'%>

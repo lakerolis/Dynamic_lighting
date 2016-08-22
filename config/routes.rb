@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'actions/new'
+
+  get 'actions/edit'
+
+  get 'actors/new' => 'actors#new'
+  get 'actors' => 'actors#index'
+  get 'actors/delete/:id' => 'actors#delete'
+  post 'actors' => 'actors#create'
+
   get 'sensors' => 'sensors#index'
   get 'sensors/new' => 'sensors#new'
   get 'sensors/delete/:id' => 'sensors#delete'
