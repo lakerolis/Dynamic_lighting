@@ -1,0 +1,22 @@
+<div class ="actors">
+  <h1>Actors</h1>
+  <table class="actorTable">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Default config</th>
+      <th></th>
+    </tr>
+    <%if @actors.any?%>
+        <% @actors.each do |actor| %>
+            <tr>
+              <td><%=actor.name%></td>
+              <td><%=actor.description%></td>
+              <td><%=actor.defaultConfig%></td>
+              <td><%= link_to 'Delete', 'actors/delete/'+actor.id.to_s, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <%end%>
+    <%end%>
+  </table>
+</div>
+<%= link_to 'New Actor', 'actors/new'%>

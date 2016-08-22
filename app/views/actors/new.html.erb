@@ -1,0 +1,16 @@
+<div class="createActor">
+
+  <%= form_for(@actor) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %><br>
+        <%= f.label :defaultConfig %><br>
+        <%= f.text_area :defaultConfig %><br>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Create' %>
+      </div>
+  <%end%>
+</div>
