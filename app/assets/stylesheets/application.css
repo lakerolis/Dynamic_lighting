@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.defaultTable {
+    width: 600px;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+}
+
+.defaultTable td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+.defaultTable tr:nth-child(even) {
+    background-color: #dddddd;
+}

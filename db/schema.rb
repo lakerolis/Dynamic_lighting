@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821113055) do
+ActiveRecord::Schema.define(version: 20160824121451) do
+
+  create_table "aactions", force: :cascade do |t|
+    t.text     "name"
+    t.text     "config"
+    t.integer  "actor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "aactions", ["actor_id"], name: "index_aactions_on_actor_id"
+
+  create_table "actions", force: :cascade do |t|
+    t.text     "name"
+    t.text     "config"
+    t.integer  "actor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "actions", ["actor_id"], name: "index_actions_on_actor_id"
 
   create_table "actors", force: :cascade do |t|
     t.text     "name"

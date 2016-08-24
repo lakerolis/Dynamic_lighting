@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'actions/new'
+  resources :aactions
+  resources :rules
 
-  get 'actions/edit'
+  #get 'actions/new' => 'actions#new'
+  #get 'actions/edit'
+  #get 'actions' => 'actions#index'
+  #post 'actions' => 'actions#create'
 
   get 'actors/new' => 'actors#new'
   get 'actors' => 'actors#index'

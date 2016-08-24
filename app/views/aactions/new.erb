@@ -1,6 +1,6 @@
-<div class="createAction">
+<div class="newAaction">
 
-  <%= form_for(@action) do |f| %>
+  <%= form_for(@aaction) do |f| %>
       <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
@@ -8,9 +8,9 @@
         <%= f.text_area :config %><br>
         <%= f.label :actor_id %><br>
         <%if @actors.any?%>
-            <%=select('action', 'actor_id', @actors.collect {|p| [ p.name, p.id ] }, {prompt: 'Select Actor'}) %>
+            <%=f.select('actor_id', @actors.collect {|p| [ p.name, p.id ] }, {prompt: 'Select Aactor'}) %>
         <%end%>
       </div>
-        <%= f.submit 'create' %>
+      <%= f.submit 'create' %>
   <%end%>
 </div>

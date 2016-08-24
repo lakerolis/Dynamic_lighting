@@ -1,0 +1,21 @@
+<div class ="actionIndex">
+  <h1>Actions</h1>
+  <table class="defaultTable">
+    <tr>
+      <th>Name</th>
+      <th>Actor</th>
+      <th>Config</th>
+      <th></th>
+    </tr>
+    <%if @actions.any?%>
+        <% @actions.each do |action| %>
+            <tr>
+              <td><%= action.name%></td>
+              <td><%= action.actor%></td>
+              <td><%= action.config%></td>
+
+            </tr>
+        <%end%>
+    <%end%>
+  </table>
+</div>
