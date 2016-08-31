@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function sendSensorInput(){
+    var id = $('#sensor_id').val();
+    var value = $('#sensor_value').val();
+    $.post( "sensorinput", { id: id, value: value } );
+}

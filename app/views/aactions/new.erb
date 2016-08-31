@@ -10,6 +10,9 @@
         <%if @actors.any?%>
             <%=f.select('actor_id', @actors.collect {|p| [ p.name, p.id ] }, {prompt: 'Select Aactor'}) %>
         <%end%>
+        <%if @rules.any?%>
+            <%=f.select('rule_id', @rules.collect {|p| [ p.name, p.id ] }, {prompt: 'Select rule'}) %>
+        <%end%>
       </div>
       <%= f.submit 'create' %>
   <%end%>

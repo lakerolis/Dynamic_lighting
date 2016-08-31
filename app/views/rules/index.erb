@@ -1,0 +1,35 @@
+<div class ="rules">
+  <h1>Rules</h1>
+  <table class="defaultTable">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>State</th>
+      <th>Actions</th>
+      <th>Conditions</th>
+      <th>ConditionType</th>
+      <th></th>
+    </tr>
+    <% @rules.each do |rule| %>
+        <tr>
+          <td><%=rule.name%></td>
+          <td><%=rule.description%></td>
+          <td><%=rule.state%></td>
+          <td>
+            <%@aactions = Aaction.where(:rule_id => rule.id)%>
+              <%@aactions.each do |a|%>
+            <%=a.name %><br>
+                <%end%>
+                </td>
+          <td>
+            <%Condition.all.each do |c|%>
+              <%=c.name%><br>
+            <%end%>
+          </td>
+          <td><%=rule.conditionType%></td>
+          <td> <%= link_to 'Delete', 'rules/'+rule.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete %></td>
+    <%end%>
+    </tr>
+  </table>
+</div>
+<%= link_to 'New rule', 'rules/new'%>

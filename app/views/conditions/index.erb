@@ -1,0 +1,18 @@
+<div class ="conditions">
+  <h1>Conditions</h1>
+  <table class="defaultTable">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+    <% @conditions.each do |condition| %>
+        <tr>
+          <td><%=condition.name%></td>
+          <td><%=condition.description%></td>
+          <td> <%= link_to 'Delete', condition.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete %></td>
+    <%end%>
+    </tr>
+  </table>
+</div>
+<%= link_to 'New conditions', 'conditions/new'%>

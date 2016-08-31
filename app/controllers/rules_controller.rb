@@ -5,10 +5,12 @@ class RulesController < ApplicationController
 
   def new
     @rule = Rule.new
+    @aactions = Aaction.all
   end
 
   def create
     @rule = Rule.new(actor_params)
+
     if @rule.save
       redirect_to '/rules'
     else
@@ -16,7 +18,7 @@ class RulesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @rule = Rule.find(params[:id])
     @rule.destroy
     respond_to do |format|
@@ -27,6 +29,6 @@ class RulesController < ApplicationController
 
   private
   def actor_params
-    params.require(:rule).permit(:name, :description, :state, :conditionTypes)
+    params.require(:rule).permit(:name, :description, :state, :conditionType, :aaction, :conditions)
   end
 end

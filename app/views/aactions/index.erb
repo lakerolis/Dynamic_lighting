@@ -4,16 +4,21 @@
     <tr>
       <th>Name</th>
       <th>Actor</th>
+      <th>Rule</th>
       <th>Config</th>
+      <th></th>
     </tr>
     <%if @aactions.any?%>
         <% @aactions.each do |aaction| %>
             <tr>
               <td><%= aaction.name%></td>
               <td><%= aaction.actor.name%></td>
+              <td><%= aaction.rule.name%></td>
               <td><%= aaction.config%></td>
+              <td> <%= link_to 'Delete', 'aactions/'+aaction.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete %></td>
             </tr>
         <%end%>
     <%end%>
   </table>
+  <%= link_to 'New action', 'aactions/new'%>
 </div>

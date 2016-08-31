@@ -1,0 +1,24 @@
+<div class="createCondition">
+
+  <%= form_for(@condition) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %><br>
+        <%= f.label :operator %><br>
+        <%= f.text_area :operator %><br>
+        <%= f.label :operator_value %><br>
+        <%= f.text_area :operator_value %><br>
+        <%if @sensors.any?%>
+            <%=f.select('sensor_id', @sensors.collect {|p| [ p.name, p.id ] }, {prompt: 'Select Sensor'}) %><br>
+        <%end%>
+        <%if @rules.any?%>
+            <%=f.select('rule_id', @rules.collect {|p| [ p.name, p.id ] }, {prompt: 'Select rule'}) %>
+        <%end%>
+      </div>
+      <div class="conditions">
+        <%= f.submit 'Create' %>
+      </div>
+  <%end%>
+</div>

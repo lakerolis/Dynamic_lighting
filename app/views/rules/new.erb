@@ -1,0 +1,26 @@
+<div class="createRule">
+
+  <%= form_for(@rule) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %><br>
+        <%= f.label :state %><br>
+        <%= f.number_field :state%><br>
+        <%= f.label :conditionType %><br>
+        <%= f.text_area :conditionType %><br>
+
+        <% if false %>
+            <%= f.label :action %><br>
+        <%if @aactions.any?%>
+            <%=select('aaction','id', @aactions.collect {|p| [ p.name, p.id ] }, {prompt: 'Select aaction'}) %><br>
+        <%end%>
+            <%end%>
+
+      </div>
+      <div class="submit">
+        <%= f.submit 'Create' %>
+      </div>
+  <%end%>
+</div>

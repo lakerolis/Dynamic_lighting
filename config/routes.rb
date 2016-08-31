@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :aactions
   resources :rules
+  resources :conditions
 
-  #get 'actions/new' => 'actions#new'
-  #get 'actions/edit'
-  #get 'actions' => 'actions#index'
-  #post 'actions' => 'actions#create'
+  get 'sensorinput' => 'sensor_input#sensorinput'
+  post 'sensorinput' => 'sensor_input#sendinput'
 
   get 'actors/new' => 'actors#new'
   get 'actors' => 'actors#index'
