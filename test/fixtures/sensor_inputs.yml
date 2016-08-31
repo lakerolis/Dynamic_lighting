@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sensor_id: MyText
+  sensorvalue: MyText
+  triggered: MyText
+
+two:
+  sensor_id: MyText
+  sensorvalue: MyText
+  triggered: MyText
