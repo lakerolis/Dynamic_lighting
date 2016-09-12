@@ -1,18 +1,22 @@
+<%= render "partials/navigation_bar" %>
 <div class ="conditions">
-  <h1>Conditions</h1>
   <table class="defaultTable">
     <tr>
       <th>Name</th>
-      <th>Description</th>
+      <th>Sensor</th>
+      <th>Rule</th>
+      <th>Condition</th>
       <th></th>
     </tr>
     <% @conditions.each do |condition| %>
         <tr>
           <td><%=condition.name%></td>
-          <td><%=condition.description%></td>
-          <td> <%= link_to 'Delete', condition.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete %></td>
+          <td><%=condition.sensor.name%>(<%=condition.sensor.id%>)</td>
+          <td><%=condition.rule.name%></td>
+          <td>x <%=condition.operator%> <%=condition.operator_value%></td>
+          <td> <%= link_to 'Delete', 'conditions/'+condition.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete,class: 'link_delete' %></td>
     <%end%>
     </tr>
   </table>
 </div>
-<%= link_to 'New conditions', 'conditions/new'%>
+<%= link_to 'New conditions', 'conditions/new',class: 'link_new'%>

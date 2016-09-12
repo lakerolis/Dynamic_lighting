@@ -1,5 +1,5 @@
+<%= render "partials/navigation_bar" %>
 <div class ="aactionIndex">
-  <h1>Actions</h1>
   <table class="defaultTable">
     <tr>
       <th>Name</th>
@@ -15,10 +15,10 @@
               <td><%= aaction.actor.name%></td>
               <td><%= aaction.rule.name%></td>
               <td><%= aaction.config%></td>
-              <td> <%= link_to 'Delete', 'aactions/'+aaction.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete %></td>
+              <td> <%= link_to 'Delete', 'aactions/'+aaction.id.to_s, data: { confirm: 'Are you sure?' },:method => :delete,class: 'link_delete' %></td>
             </tr>
         <%end%>
     <%end%>
   </table>
-  <%= link_to 'New action', 'aactions/new'%>
+  <%= link_to 'New action', 'aactions/new',class: 'link_new'%>
 </div>

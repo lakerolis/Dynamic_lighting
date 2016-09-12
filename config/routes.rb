@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   resources :rules
   resources :conditions
 
+  get 'index' => 'index#index'
+
+  root 'index#index'
+
   get 'sensorinput' => 'sensor_input#sensorinput'
-  post 'sensorinput' => 'sensor_input#sendinput'
+ #post 'sensorinput' => 'sensor_input#sendinput'
+  post 'sensorinput' => 'sensor_input#receiveSensorInput'
 
   get 'actors/new' => 'actors#new'
   get 'actors' => 'actors#index'

@@ -20,3 +20,4 @@ function sendSensorInput(){
     var value = $('#sensor_value').val();
     $.post( "sensorinput", { id: id, value: value } );
 }
+

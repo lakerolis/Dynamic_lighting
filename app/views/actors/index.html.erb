@@ -13,10 +13,10 @@
               <td><%=actor.name%></td>
               <td><%=actor.description%></td>
               <td><%=actor.defaultConfig%></td>
-              <td><%= link_to 'Delete', 'actors/delete/'+actor.id.to_s, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Delete', 'actors/delete/'+actor.id.to_s, data: { confirm: 'Are you sure?' },class: 'link_delete' %></td>
             </tr>
         <%end%>
     <%end%>
   </table>
 </div>
-<%= link_to 'New Actor', 'actors/new'%>
+<%= link_to 'New Actor', 'actors/new',class: 'link_new'%>

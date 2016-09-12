@@ -1,5 +1,5 @@
+<%= render "partials/navigation_bar" %>
 <div class ="sensors">
-  <h1>Sensors</h1>
   <table class="defaultTable">
     <tr>
       <th>Name</th>
@@ -8,11 +8,11 @@
     </tr>
     <% @sensors.each do |sensor| %>
         <tr>
-          <td><%=sensor.name%></td>
+          <td><%=sensor.name%>(<%=sensor.id%>)</td>
           <td><%=sensor.description%></td>
-          <td> <%= link_to 'Delete', 'sensors/delete/'+sensor.id.to_s, data: { confirm: 'Are you sure?' } %></td>
+          <td> <%= link_to 'Delete', 'sensors/delete/'+sensor.id.to_s, data: { confirm: 'Are you sure?' },class: 'link_delete' %></td>
     <%end%>
     </tr>
   </table>
 </div>
-<%= link_to 'New sensor', 'sensors/new'%>
+<%= link_to 'New sensor', 'sensors/new', class: 'link_new'%>

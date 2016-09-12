@@ -1,0 +1,16 @@
+<% def isActive(s) %>
+    <%path = request.env['PATH_INFO'].split('/')[1] %>
+    <% return 'active' if path==s%>
+<% end%>
+<div class="header"><h1>Dynamic Lighting</h1></div>
+<div class="navigation_bar">
+  <ul>
+    <li><%= link_to 'Index', index_path, :class => isActive('index') %></li>
+    <li><%= link_to 'rules', rules_path, :class => isActive('rules') %></li>
+    <li><%= link_to 'sensors', sensors_path, :class => isActive('sensors') %></li>
+    <li><%= link_to 'aactions', aactions_path, :class => isActive('aactions') %></li>
+    <li><%= link_to 'conditions', conditions_path, :class => isActive('conditions') %></li>
+    <li><%= link_to 'sensorinput', sensorinput_path, :class => isActive('sensorinput') %></li>
+  </ul>
+</div>
+
